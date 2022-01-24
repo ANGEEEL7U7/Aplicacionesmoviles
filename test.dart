@@ -2,40 +2,43 @@ import 'dart:ffi';
 import "dart:io"; //libreria de dart
 
 void main() {
-  /*lamentablemente dart en consola no podemos 
-  hacer que nosotros mismos agregemos nuestro valores
-  si no que debemos agregar un valor por default */
-  int horas;
+  
   var salario;
   var multi = 120;
   int acta = 1;
-  int suma = 0;
-  String empleado;
-  horas = 27;
-  empleado = 'Alejandro';
-  /*dymanic cumple con la funcon de juntar una cadena detexto
-  lo que ayuda mucho para poder compactar el codigo*/
+  int suma =
+      0; /*
+  String num = stdin.readLineSync() ?? '0';
+  int n = int.parse(num);
+  */
 
-  /*si nosotros quetemos agregar una variable del
-  tipo numerico debemos hacerlo dentro de las comillas
-  simples y poniendo un $y la variable
-  ejemplo: 'texto $variable' */
-  dynamic OneSyze = empleado + 'Trabaja: $horas horas su salario es de > ';
-  dynamic TwoSyze = empleado + 'Trabaja mas de 27 horas su salario es de > ';
-  dynamic ThreeSyze = empleado +
-      'Tiene menos horas por lo tanto tiene un acta administrativo $acta';
+  print("ingresa el nombre del empleado: ");
+  var empleado = stdin.readLineSync();
+  print("ingresa las horas trabajadas de $empleado : ");
+  String a = stdin.readLineSync() ?? '0';
+  int horas = int.parse(a);
 
   if (horas == 27) {
-    salario = horas * multi;
-    print(OneSyze + '$salario');
+    salario = multi * horas;
+    print("$empleado trabajo $horas horas su salario es de: $salario");
   } else {
     if (horas > 27) {
-      salario = horas * multi;
-      print(TwoSyze + '$salario');
-      print(salario);
+      salario = multi * horas;
+      print(
+          "$empleado trabajo horas extra por lo tanto su salario es de: $salario");
     } else {
       if (horas < 27) {
-        print(ThreeSyze);
+        print(
+            "$empleado cuenta con menos horas por lo tanto tiene se levantara un acta administrativa");
+        print(
+            "Ingrese la cantidad de actas administraticas que cuenta el empleado");
+        String b = stdin.readLineSync() ?? '0';
+        int acta = int.parse(b);
+        if (acta >= 2) {
+          print("empleado despedido");
+        } else {
+          print("empleado cuenta con una acta administrativa");
+        }
       }
     }
   }
