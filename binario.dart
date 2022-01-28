@@ -2,6 +2,22 @@ import 'dart:ffi';
 
 import 'dart:io';
 
+/*
+Universidad Tecnologica Metropolitana
+
+Desarrollo Movil Multiplataforma
+
+Ing. Joel Chuc
+
+Calcular el imc de la persona
+
+Angel Abraham Cab Gonzalez
+
+5 Cuatrimestre Grupo C
+
+Parcial 1
+*/
+
 void main() {
   int valor_binario = 0;
   int a = 1;
